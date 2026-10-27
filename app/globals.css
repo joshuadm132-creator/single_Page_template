@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  /* ===== Warm Cream Theme ===== */
+  --color-ink: #FAF8F5;        /* Main background: Warm off-white/cream */
+  --color-ink-soft: #F0EAE1;   /* Alternate sections: Soft sand/beige */
+  
+  --color-surface: #2D2A26;    /* Primary text: Deep espresso/charcoal */
+  --color-muted: #6B665E;      /* Secondary text: Warm gray */
+  
+  --color-brand: #D45D3F;      /* Primary accent: Terracotta/Burnt Orange */
+  --color-brand-dark: #B84A2F; /* Hover state: Deep terracotta */
+   
+  --color-blue: #1C3F60;
+
+  /* Fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
