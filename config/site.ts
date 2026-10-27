@@ -76,11 +76,15 @@ export interface ContactConfig {
   email: string;
   location: string;
 }
-
 export interface FooterConfig {
-  tagline: string;
-  copyright: string;
-  links: NavLink[]; // Reusing the NavLink type from above
+  quote: string;
+  author: string;
+  copyright: string; // We will remove the year from here and generate it in the component
+  links: NavLink[];
+  designedBy: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface SiteConfig {
@@ -255,16 +259,20 @@ export const siteConfig: SiteConfig = {
     email: "lornamoffat3@gmail.com",
     location: "Harare, Zimbabwe",
   },
-  footer: {
-    tagline: "Strategic projects, delivered with clarity and measurable impact.",
-    copyright: `© ${new Date().getFullYear()} Lorna Moffat. All rights reserved.`,
+ footer: {
+    quote: "Strategy without execution is just a dream. I help you turn your plans into measurable progress and sustainable impact.",
+    author: "Lorna Moffat",
+    copyright: "Lorna Moffat. All rights reserved.",
     links: [
       { label: "Home", href: "#home" },
       { label: "Services", href: "#services" },
       { label: "About", href: "#about" },
       { label: "Contact", href: "#contact" },
     ],
+    designedBy: {
+      name: "Valis",
+      url: "https://valistech.vercel.app/", // You can update this URL later
+    },
   },
-
 };
 

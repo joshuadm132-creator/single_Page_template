@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
@@ -34,7 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased bg-ink text-surface">
          <Navbar />
         {children}
-        <Footer/>
+                <Suspense fallback={<div className="h-40 bg-ink border-t border-surface/10" />}>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
